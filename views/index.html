@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <p>Book Directory Application</p>
+    </header>
+    <div id="form">
+        <label for="book-name">Book Name</label>
+        <input type="text" id="book-name">
+        <label for="author-name">Author Name</label>
+        <input type="text" id="author-name">
+        <button type="button" onclick="add_book()">Submit</button>
+    </div>
+    <div id="book-list"></div>
+    <footer>
+        <p>All right reserved</p>
+    </footer>
+    <script>
+        fetch('/')
+        .then(res => res.json())
+        .then(data => {
+            let book_list = document.findElementbyId('book-list')
+            data.forEach(d => {
+                let item = document.createElement('div')
+                item.className = 'item'
+                let name = document.createElement('p')
+                name.className = 'name'
+                name.innerText = d['book-name']
+                item.appendChild(name)
+                name.innerText = d['author-name']
+                item.appendChild(name)
+                book_list.appendChild(item)
+            })
+        })
+        .catch(err => console.error(err))
+    </script>
+    <script>
+        function add_book(){
+            let book_name = document.findElementbyId('book-name').value
+            let author_name = document.findElementbyId('author-name').value
+            let book_data = {
+                "book-name": book_name,
+                "author-name": author_name
+            }
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                   "Content-type": "application/json"
+                },
+                body: JSON.stringify(book_data)
+            })
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(err => console.err(err))
+        }
+    </script>
+</body>
+</html>
