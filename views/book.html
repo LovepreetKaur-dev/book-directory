@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <p>Book Directory Application</p>
+    </header>
+    <div id="book-page">
+        <p>Book Name</p>
+        <p>AUthor Name</p>
+        <button type="button" onclick="delete_book()">DELETE</button>
+        <!-- <button type="button" onclick="">UPDATE</button> -->
+    </div>
+    <div id="form">
+        <label for="book-name">Book Name</label>
+        <input type="text" id="book-name">
+        <label for="author-name">Author Name</label>
+        <input type="text" id="author-name">
+        <!-- <button type="button" onclick="add_book()">Submit</button> -->
+    </div>
+    <footer>
+        <p>All right reserved</p>
+    </footer>
+    <script>
+        function delete_book(id){
+            fetch('/id', {
+                method: 'DELETE',
+                headers: {
+                   "Content-type": "application/json"
+                }
+            })
+        }
+    </script>
+</body>
+</html>
