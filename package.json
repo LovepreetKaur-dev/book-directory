@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chandrangreat/books-directory-nodejs.git"
+    "url": "git+https://github.com/LovepreetKaur-dev/books-directory.git"
   },
   "keywords": [
     "books-directory"
@@ -24,7 +24,7 @@
   "author": "Ravi Chandran",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chandrangreat/books-directory-nodejs/issues"
+    "url": "https://github.com/LovepreetKaur-dev/books-directory/issues"
   },
-  "homepage": "https://github.com/chandrangreat/books-directory-nodejs#readme"
+  "homepage": "https://github.com/LovepreetKaur-dev/books-directory.git#readme"
 }
